@@ -56,7 +56,20 @@ void rShiftMas(int* source,int n, int size) {
 // Вариант 6:
 // Написать функцию сдвига влево на n-элементов с заполнением крайних элементов нулями
 void lShiftMas(int* source,int n, int size) {
-
+	cin >> n;
+	for (int j = 0; j < n; j++) {
+		for (int i = 0; i < size; i++) {
+			if (size == i + 1) {
+				break;
+			}
+			source[i] = source[i + 1];
+		}
+		source[size - 1] = 0;
+	}
+	for (int i = 0; i < size; i++)
+	{
+		cout << source[i];
+	}
 }
 
 
@@ -195,11 +208,9 @@ void runTest(int (*testFunction)(),const std::string& testName)
 
 
 int main() {
-   runTest(testInitByZeroMas,"testInitByZeroMas");
-   runTest(testInitMas,"testInitMas");
-   runTest(testCopyMas,"testCopyMas");
-
-   runTest(testCompareMas,"testCompareMas");
-   runTest(testSkoFromMas,"testSkoFromMas");
+	const int size = 5;
+	int source[size] = { 1,2,3,4,5 };
+	int newsource[size];
+	lShiftMas(source, 1, size);
 }
 
