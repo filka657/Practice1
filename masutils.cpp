@@ -165,8 +165,18 @@ int testrShiftMas() {
 
 // Вариант 6:
 // Написать функцию сдвига влево на n-элементов с заполнением крайних элементов нулями
-int testlShiftMas() {
-  return -1;
+bool compareArr(int* a, int* b, int size) {
+	for (int i = 0; i < size; i++)
+		if (a[i] != b[i]) return false;
+	return true;
+}
+
+bool test(int n, int size) {
+	int arr1[5] = { 1,2,3,4,5 };
+	int arr2[5] = { 4,5,0,0,0 };
+	lShiftMas(arr1, 3, 5);
+	bool f1 = compareArr(arr1, arr2, 5);
+	return (f1);
 }
 
 
@@ -210,7 +220,13 @@ void runTest(int (*testFunction)(),const std::string& testName)
 int main() {
 	const int size = 5;
 	int source[size] = { 1,2,3,4,5 };
-	int newsource[size];
-	lShiftMas(source, 1, size);
+	if (test(3, size)) {
+		cout << "test ok";
+	}
+	else {
+
+		cout << "test not ok";
+	}
+	return 0;
 }
 
