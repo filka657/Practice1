@@ -74,9 +74,9 @@ bool testlShiftList() {
 static void runTest(bool (*testFunction)(), const string& testName)
 {
 	if (testFunction() == 1)
-		std::cout << "Test " << testName << " - OK" << std::endl;
+		cout << "Test " << testName << " - OK" << endl;
 	else
-		std::cout << "Test " << testName << " - FAIL" << std::endl;
+		cout << "Test " << testName << " - FAIL" << endl;
 }
 
 int main()
